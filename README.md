@@ -26,11 +26,20 @@ mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng-web.xml
 1. Установить Android Studio, создать и запустить эмулятор.
 2. Установить Wikipedia из Google Play (или APK).
 3. Запустить Appium Server на 127.0.0.1:4723.
+   Пример для Windows PowerShell:
+```powershell
+appium --address 127.0.0.1 --port 4723 --base-path /wd/hub
+```
 4. Запустить:
 ```bash
 mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng-mobile.xml
 ```
 5. Примечание: если первый запуск показывает онбординг, тест его закрывает автоматически.
+
+Чеклист PowerShell:
+```powershell
+netstat -ano | findstr :4723
+```
 
 ## 6. Общий запуск
 ```bash
