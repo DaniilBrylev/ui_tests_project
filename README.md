@@ -15,11 +15,15 @@
  - Mobile: Wikipedia main screen, search "Java", open first result and check title
  
 -## 4. Как запустить Web
+
 -1. Установить JDK 17 и Maven.
+
 -2. Убедиться, что Chrome установлен.
+
 -3. Запуск suite:
 -```powershell
 -mvn test -Dsurefire.suiteXmlFile=src/test/resources/testng-web.xml
+
 -4. Запуск одного теста:
 -powershell +mvn -Dtest=tests.web.AddRemoveElementsWebTest test +
 +## 4. Запуск Web (PowerShell)
