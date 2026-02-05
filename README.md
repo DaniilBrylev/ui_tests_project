@@ -1,7 +1,5 @@
-# ui-tests-project
-
 ## 1. О проекте
-Учебный проект по UI-автотестам для веб- и мобильных приложений.
+Учебный проект по UI-автотестам для веб и мобильных приложений.
 Реализованы автоматизированные тесты с использованием Selenium WebDriver и Appium.
 Тесты запускаются через TestNG suites или по отдельности.
 
@@ -36,62 +34,39 @@ Android-приложение Wikipedia:
 - Maven
 - Установленный Google Chrome
 
-Запуск web suite:
-```powershell
+- Запуск web suite:
 mvn test -Dsurefire.suiteXmlFile=src/test/resources/testng-web.xml
-Запуск одного web-теста:
 
-powershell
-Копировать код
+- Запуск одного web-теста:
 mvn -Dtest=tests.web.AddRemoveElementsWebTest test
-5. Запуск Mobile (Wikipedia, PowerShell)
+
+## 5. Запуск Mobile (Wikipedia, PowerShell)
 Требования:
-
-Android SDK (например: D:\Android\Sdk)
-
-Запущенный Android Emulator (например: emulator-5554)
-
-Appium Server 3.x
-
-Установить UDID эмулятора:
-
-powershell
-Копировать код
+- Android SDK (например: D:\Android\Sdk)
+- Запущенный Android Emulator (например: emulator-5554)
+- Appium Server 3.x
+- Установить UDID эмулятора:
 $env:ANDROID_UDID="emulator-5554"
-Запустить Appium Server:
-
-powershell
-Копировать код
+- Запустить Appium Server:
 appium --address 127.0.0.1 --port 4723 --base-path /wd/hub
-Запуск mobile suite:
 
-powershell
-Копировать код
+- Запуск mobile suite:
 mvn test "-Dsurefire.suiteXmlFile=src/test/resources/testng-mobile.xml" `
   "-Dadb.path=D:\Android\Sdk\platform-tools\adb.exe" `
   "-Dandroid.udid=emulator-5554"
-Запуск одного mobile-теста:
 
-powershell
-Копировать код
+## Запуск одного mobile-теста:
 mvn -Dtest=tests.mobile.SearchMobileTest test `
   "-Dadb.path=D:\Android\Sdk\platform-tools\adb.exe" `
   "-Dandroid.udid=emulator-5554"
 Примечание:
 Онбординг и системные разрешения в приложении Wikipedia закрываются автоматически.
 
-6. Общий запуск
+## 6. Общий запуск
 Запуск всех тестов:
-
-powershell
-Копировать код
 mvn test
-7. На чем проверено
-Windows 10 / 11
+## 7. На чем проверено
+- Windows 10 
+- Google Chrome
+- Android Emulator (Android 14)
 
-Google Chrome
-
-Android Emulator (Android 12 / 13 / 14)
-
-markdown
-Копировать код
