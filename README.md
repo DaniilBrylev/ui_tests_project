@@ -19,22 +19,31 @@
 2. Убедиться, что Chrome установлен.
 3. Запустить:
 ```bash
-mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng-web.xml
+mvn test -Dsurefire.suiteXmlFile=src/test/resources/testng-web.xml
 ```
 
 ## 5. Как запустить Mobile
-1. Установить Android Studio, создать и запустить эмулятор.
-2. Установить Wikipedia из Google Play (или APK).
-3. Запустить Appium Server на 127.0.0.1:4723.
-   Пример для Windows PowerShell:
+1. Добавить adb в PATH:
+```powershell
+$env:Path="D:\Android\Sdk\platform-tools;$env:Path"
+```
+2. Установить UDID:
+```powershell
+$env:ANDROID_UDID="emulator-5554"
+```
+3. Добавить npm bin в PATH:
+```powershell
+$env:Path="C:\Users\Даниил\AppData\Roaming\npm;$env:Path"
+```
+4. Запустить Appium Server на 127.0.0.1:4723 (base-path /wd/hub):
 ```powershell
 appium --address 127.0.0.1 --port 4723 --base-path /wd/hub
 ```
-4. Запустить:
-```bash
-mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng-mobile.xml
+5. Запустить:
+```powershell
+mvn test "-Dsurefire.suiteXmlFile=src/test/resources/testng-mobile.xml"
 ```
-5. Примечание: если первый запуск показывает онбординг, тест его закрывает автоматически.
+6. Примечание: если первый запуск показывает онбординг, тест его закрывает автоматически.
 
 Чеклист PowerShell:
 ```powershell

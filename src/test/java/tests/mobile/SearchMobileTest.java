@@ -9,6 +9,7 @@ public class SearchMobileTest extends BaseMobileTest {
 
   @Test
   public void searchReturnsResults() {
+    ensureWikipediaInForeground();
     dismissOnboardingIfPresent();
 
     SearchPage searchPage = new SearchPage(driver, wait);

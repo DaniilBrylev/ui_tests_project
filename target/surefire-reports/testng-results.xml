@@ -1,49 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T20:34:21 MSK" name="Web UI Tests" finished-at="2026-02-05T20:34:36 MSK" duration-ms="15119">
+  <suite started-at="2026-02-06T03:24:46 MSK" name="All UI Tests" finished-at="2026-02-06T03:24:46 MSK" duration-ms="0">
     <groups>
     </groups>
-    <test started-at="2026-02-05T20:34:21 MSK" name="Web Tests" finished-at="2026-02-05T20:34:36 MSK" duration-ms="15119">
-      <class name="tests.web.SmokeWebTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.SmokeWebTest@293a5bf6]" started-at="2026-02-05T20:34:32 MSK" name="setUp" finished-at="2026-02-05T20:34:33 MSK" duration-ms="957" status="PASS">
+  </suite> <!-- All UI Tests -->
+  <suite started-at="2026-02-06T03:17:19 MSK" name="Mobile UI Tests" finished-at="2026-02-06T03:24:46 MSK" duration-ms="447150">
+    <groups>
+    </groups>
+    <test started-at="2026-02-06T03:17:19 MSK" name="Mobile Tests" finished-at="2026-02-06T03:24:46 MSK" duration-ms="447150">
+      <class name="tests.mobile.OpenArticleMobileTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.mobile.OpenArticleMobileTest@292b08d6]" started-at="2026-02-06T03:17:19 MSK" name="setUp" finished-at="2026-02-06T03:17:26 MSK" duration-ms="7112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkboxesLinkOpens()[pri:0, instance:tests.web.SmokeWebTest@293a5bf6]" started-at="2026-02-05T20:34:33 MSK" name="checkboxesLinkOpens" finished-at="2026-02-05T20:34:36 MSK" duration-ms="3069" status="PASS">
+        <test-method signature="openFirstSearchResult()[pri:0, instance:tests.mobile.OpenArticleMobileTest@292b08d6]" started-at="2026-02-06T03:17:26 MSK" name="openFirstSearchResult" finished-at="2026-02-06T03:20:16 MSK" duration-ms="170383" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Search container not found
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.17'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Search container not found
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.17'
+Driver info: driver.version: unknown
+at pages.mobile.SearchPage.openSearch(SearchPage.java:62)
+at tests.mobile.OpenArticleMobileTest.openFirstSearchResult(OpenArticleMobileTest.java:17)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1269)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openFirstSearchResult -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.mobile.OpenArticleMobileTest@292b08d6]" started-at="2026-02-06T03:20:16 MSK" name="tearDown" finished-at="2026-02-06T03:20:17 MSK" duration-ms="509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.mobile.OpenArticleMobileTest -->
+      <class name="tests.mobile.SmokeMobileTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.mobile.SmokeMobileTest@36ebc363]" started-at="2026-02-06T03:23:46 MSK" name="setUp" finished-at="2026-02-06T03:23:50 MSK" duration-ms="3921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="mainPageLoads()[pri:0, instance:tests.mobile.SmokeMobileTest@36ebc363]" started-at="2026-02-06T03:23:50 MSK" name="mainPageLoads" finished-at="2026-02-06T03:24:45 MSK" duration-ms="55013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mainPageLoads -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.mobile.SmokeMobileTest@36ebc363]" started-at="2026-02-06T03:24:45 MSK" name="tearDown" finished-at="2026-02-06T03:24:46 MSK" duration-ms="645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.mobile.SmokeMobileTest -->
+      <class name="tests.mobile.SearchMobileTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.mobile.SearchMobileTest@22555ebf]" started-at="2026-02-06T03:20:17 MSK" name="setUp" finished-at="2026-02-06T03:20:21 MSK" duration-ms="3950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchReturnsResults()[pri:0, instance:tests.mobile.SearchMobileTest@22555ebf]" started-at="2026-02-06T03:20:21 MSK" name="searchReturnsResults" finished-at="2026-02-06T03:23:46 MSK" duration-ms="204983" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Search results should appear expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Search results should appear expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at tests.mobile.SearchMobileTest.searchReturnsResults(SearchMobileTest.java:19)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1269)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchReturnsResults -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.mobile.SearchMobileTest@22555ebf]" started-at="2026-02-06T03:23:46 MSK" name="tearDown" finished-at="2026-02-06T03:23:46 MSK" duration-ms="625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.mobile.SearchMobileTest -->
+    </test> <!-- Mobile Tests -->
+  </suite> <!-- Mobile UI Tests -->
+  <suite started-at="2026-02-06T03:14:50 MSK" name="Web UI Tests" finished-at="2026-02-06T03:17:19 MSK" duration-ms="148419">
+    <groups>
+    </groups>
+    <test started-at="2026-02-06T03:14:50 MSK" name="Web Tests" finished-at="2026-02-06T03:17:19 MSK" duration-ms="148419">
+      <class name="tests.web.SmokeWebTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.SmokeWebTest@f6efaab]" started-at="2026-02-06T03:17:14 MSK" name="setUp" finished-at="2026-02-06T03:17:15 MSK" duration-ms="1041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkboxesLinkOpens()[pri:0, instance:tests.web.SmokeWebTest@f6efaab]" started-at="2026-02-06T03:17:15 MSK" name="checkboxesLinkOpens" finished-at="2026-02-06T03:17:19 MSK" duration-ms="3418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkboxesLinkOpens -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.SmokeWebTest@293a5bf6]" started-at="2026-02-05T20:34:36 MSK" name="tearDown" finished-at="2026-02-05T20:34:36 MSK" duration-ms="179" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.SmokeWebTest@f6efaab]" started-at="2026-02-06T03:17:19 MSK" name="tearDown" finished-at="2026-02-06T03:17:19 MSK" duration-ms="151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.web.SmokeWebTest -->
       <class name="tests.web.LoginWebTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.LoginWebTest@42a48628]" started-at="2026-02-05T20:34:26 MSK" name="setUp" finished-at="2026-02-05T20:34:27 MSK" duration-ms="968" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.LoginWebTest@74f0ea28]" started-at="2026-02-06T03:17:09 MSK" name="setUp" finished-at="2026-02-06T03:17:10 MSK" duration-ms="946" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="userCanLogin()[pri:0, instance:tests.web.LoginWebTest@42a48628]" started-at="2026-02-05T20:34:27 MSK" name="userCanLogin" finished-at="2026-02-05T20:34:32 MSK" duration-ms="4351" status="PASS">
+        <test-method signature="userCanLogin()[pri:0, instance:tests.web.LoginWebTest@74f0ea28]" started-at="2026-02-06T03:17:10 MSK" name="userCanLogin" finished-at="2026-02-06T03:17:14 MSK" duration-ms="3750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userCanLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.LoginWebTest@42a48628]" started-at="2026-02-05T20:34:32 MSK" name="tearDown" finished-at="2026-02-05T20:34:32 MSK" duration-ms="185" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.LoginWebTest@74f0ea28]" started-at="2026-02-06T03:17:14 MSK" name="tearDown" finished-at="2026-02-06T03:17:14 MSK" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.web.LoginWebTest -->
       <class name="tests.web.DropdownWebTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.DropdownWebTest@1bd4fdd]" started-at="2026-02-05T20:34:21 MSK" name="setUp" finished-at="2026-02-05T20:34:23 MSK" duration-ms="2031" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.web.DropdownWebTest@7d8995e]" started-at="2026-02-06T03:14:50 MSK" name="setUp" finished-at="2026-02-06T03:17:06 MSK" duration-ms="135822" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="canSelectOption()[pri:0, instance:tests.web.DropdownWebTest@1bd4fdd]" started-at="2026-02-05T20:34:23 MSK" name="canSelectOption" finished-at="2026-02-05T20:34:26 MSK" duration-ms="3147" status="PASS">
+        <test-method signature="canSelectOption()[pri:0, instance:tests.web.DropdownWebTest@7d8995e]" started-at="2026-02-06T03:17:06 MSK" name="canSelectOption" finished-at="2026-02-06T03:17:09 MSK" duration-ms="2854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canSelectOption -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.DropdownWebTest@1bd4fdd]" started-at="2026-02-05T20:34:26 MSK" name="tearDown" finished-at="2026-02-05T20:34:26 MSK" duration-ms="181" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.web.DropdownWebTest@7d8995e]" started-at="2026-02-06T03:17:09 MSK" name="tearDown" finished-at="2026-02-06T03:17:09 MSK" duration-ms="223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

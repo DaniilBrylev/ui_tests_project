@@ -10,6 +10,7 @@ public class OpenArticleMobileTest extends BaseMobileTest {
 
   @Test
   public void openFirstSearchResult() {
+    ensureWikipediaInForeground();
     dismissOnboardingIfPresent();
 
     SearchPage searchPage = new SearchPage(driver, wait);

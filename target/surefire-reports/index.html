@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">3 suites, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -35,6 +35,104 @@
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Mobile_UI_Tests" class="navigator-link">
+              <span class="suite-name border-failed">Mobile UI Tests</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Mobile_UI_Tests" class="navigator-link ">
+                    <span>C:\Users\Даниил\Desktop\ui-tests-project\src\test\resources\testng-mobile.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Mobile_UI_Tests" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Mobile_UI_Tests" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Mobile_UI_Tests" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Mobile_UI_Tests" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Mobile_UI_Tests" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Mobile_UI_Tests" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="hide-methods failed suite-Mobile_UI_Tests"> (hide)</a> <!-- hide-methods failed suite-Mobile_UI_Tests -->
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="show-methods failed suite-Mobile_UI_Tests"> (show)</a> <!-- show-methods failed suite-Mobile_UI_Tests -->
+                    </span>
+                    <div class="method-list-content failed suite-Mobile_UI_Tests">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.OpenArticleMobileTest" class="method navigator-link" hash-for-method="openFirstSearchResult">openFirstSearchResult</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.SearchMobileTest" class="method navigator-link" hash-for-method="searchReturnsResults">searchReturnsResults</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Mobile_UI_Tests -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="hide-methods passed suite-Mobile_UI_Tests"> (hide)</a> <!-- hide-methods passed suite-Mobile_UI_Tests -->
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="show-methods passed suite-Mobile_UI_Tests"> (show)</a> <!-- show-methods passed suite-Mobile_UI_Tests -->
+                    </span>
+                    <div class="method-list-content passed suite-Mobile_UI_Tests">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.SmokeMobileTest" class="method navigator-link" hash-for-method="mainPageLoads">mainPageLoads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Mobile_UI_Tests -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
@@ -127,22 +225,70 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Web_UI_Tests" class="panel Web_UI_Tests">
-          <div class="suite-Web_UI_Tests-class-passed">
+        <div panel-name="suite-All_UI_Tests" class="panel All_UI_Tests">
+        </div> <!-- panel All_UI_Tests -->
+        <div panel-name="suite-Mobile_UI_Tests" class="panel Mobile_UI_Tests">
+          <div class="suite-Mobile_UI_Tests-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.web.LoginWebTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">tests.mobile.SearchMobileTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="userCanLogin">
-                  </a> <!-- userCanLogin -->
-                  <span class="method-name">userCanLogin</span>
+                  <a name="searchReturnsResults">
+                  </a> <!-- searchReturnsResults -->
+                  <span class="method-name">searchReturnsResults</span>
+                  <div class="stack-trace">java.lang.AssertionError: Search results should appear expected [true] but found [false]
+	at tests.mobile.SearchMobileTest.searchReturnsResults(SearchMobileTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_UI_Tests-class-passed -->
+          </div> <!-- suite-Mobile_UI_Tests-class-failed -->
+          <div class="suite-Mobile_UI_Tests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.mobile.OpenArticleMobileTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="openFirstSearchResult">
+                  </a> <!-- openFirstSearchResult -->
+                  <span class="method-name">openFirstSearchResult</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Search container not found
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at pages.mobile.SearchPage.openSearch(SearchPage.java:62)
+	at tests.mobile.OpenArticleMobileTest.openFirstSearchResult(OpenArticleMobileTest.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Mobile_UI_Tests-class-failed -->
+          <div class="suite-Mobile_UI_Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.mobile.SmokeMobileTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="mainPageLoads">
+                  </a> <!-- mainPageLoads -->
+                  <span class="method-name">mainPageLoads</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Mobile_UI_Tests-class-passed -->
+        </div> <!-- panel Mobile_UI_Tests -->
+        <div panel-name="suite-Web_UI_Tests" class="panel Web_UI_Tests">
           <div class="suite-Web_UI_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -154,6 +300,21 @@
                   <a name="canSelectOption">
                   </a> <!-- canSelectOption -->
                   <span class="method-name">canSelectOption</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Web_UI_Tests-class-passed -->
+          <div class="suite-Web_UI_Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.web.LoginWebTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="userCanLogin">
+                  </a> <!-- userCanLogin -->
+                  <span class="method-name">userCanLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -174,6 +335,46 @@
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Web_UI_Tests-class-passed -->
         </div> <!-- panel Web_UI_Tests -->
+        <div panel-name="test-xml-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Даниил\Desktop\ui-tests-project\src\test\resources\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;All UI Tests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;suite-files&gt;
+    &lt;suite-file path=&quot;testng-web.xml&quot;/&gt;
+    &lt;suite-file path=&quot;testng-mobile.xml&quot;/&gt;
+  &lt;/suite-files&gt;
+&lt;/suite&gt; &lt;!-- All UI Tests --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="test-xml-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Даниил\Desktop\ui-tests-project\src\test\resources\testng-mobile.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Mobile UI Tests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Mobile Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;packages&gt;
+      &lt;package name=&quot;tests.mobile&quot;/&gt;
+    &lt;/packages&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.mobile.OpenArticleMobileTest&quot;/&gt;
+      &lt;class name=&quot;tests.mobile.SearchMobileTest&quot;/&gt;
+      &lt;class name=&quot;tests.mobile.SmokeMobileTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Mobile Tests --&gt;
+&lt;/suite&gt; &lt;!-- Mobile UI Tests --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="test-xml-Web_UI_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">C:\Users\Даниил\Desktop\ui-tests-project\src\test\resources\testng-web.xml</span>
@@ -197,6 +398,27 @@
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="testlist-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for All UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Mobile UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Mobile Tests (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="testlist-Web_UI_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Tests for Web UI Tests</span>
@@ -209,11 +431,87 @@
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="group-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for All UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Mobile UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="group-Web_UI_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Groups for Web UI Tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for All UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_All_UI_Tests');
+function tableData_All_UI_Tests() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(0);
+window.suiteTableData['All_UI_Tests']= { tableData: data, tableDiv: 'times-div-All_UI_Tests'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 0 ms</span>
+              <div id="times-div-All_UI_Tests">
+              </div> <!-- times-div-All_UI_Tests -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Mobile UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Mobile_UI_Tests');
+function tableData_Mobile_UI_Tests() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(3);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'searchReturnsResults')
+data.setCell(0, 2, 'tests.mobile.SearchMobileTest')
+data.setCell(0, 3, 204983);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'openFirstSearchResult')
+data.setCell(1, 2, 'tests.mobile.OpenArticleMobileTest')
+data.setCell(1, 3, 170383);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'mainPageLoads')
+data.setCell(2, 2, 'tests.mobile.SmokeMobileTest')
+data.setCell(2, 3, 55013);
+window.suiteTableData['Mobile_UI_Tests']= { tableData: data, tableDiv: 'times-div-Mobile_UI_Tests'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <div id="times-div-Mobile_UI_Tests">
+              </div> <!-- times-div-Mobile_UI_Tests -->
+            </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Web_UI_Tests" class="panel">
@@ -234,15 +532,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'userCanLogin')
 data.setCell(0, 2, 'tests.web.LoginWebTest')
-data.setCell(0, 3, 4351);
+data.setCell(0, 3, 3750);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'canSelectOption')
-data.setCell(1, 2, 'tests.web.DropdownWebTest')
-data.setCell(1, 3, 3147);
+data.setCell(1, 1, 'checkboxesLinkOpens')
+data.setCell(1, 2, 'tests.web.SmokeWebTest')
+data.setCell(1, 3, 3418);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'checkboxesLinkOpens')
-data.setCell(2, 2, 'tests.web.SmokeWebTest')
-data.setCell(2, 3, 3069);
+data.setCell(2, 1, 'canSelectOption')
+data.setCell(2, 2, 'tests.web.DropdownWebTest')
+data.setCell(2, 3, 2854);
 window.suiteTableData['Web_UI_Tests']= { tableData: data, tableDiv: 'times-div-Web_UI_Tests'}
 return data;
 }
@@ -253,9 +551,37 @@ return data;
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
+        <div panel-name="reporter-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for All UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Mobile UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
         <div panel-name="reporter-Web_UI_Tests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Reporter output for Web UI Tests</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -265,6 +591,68 @@ return data;
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-All_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Mobile_UI_Tests" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.mobile.OpenArticleMobileTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">openFirstSearchResult</span>
+                <span class="method-start">7113 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">177502 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.mobile.SearchMobileTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">178011 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchReturnsResults</span>
+                <span class="method-start">181961 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">386946 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.mobile.SmokeMobileTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">387571 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">mainPageLoads</span>
+                <span class="method-start">391492 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">446505 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Web_UI_Tests" class="panel">
@@ -280,41 +668,41 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">canSelectOption</span>
-                <span class="method-start">2038 ms</span>
+                <span class="method-start">135832 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">5188 ms</span>
+                <span class="method-start">138689 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.web.LoginWebTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5370 ms</span>
+                <span class="method-start">138914 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">userCanLogin</span>
-                <span class="method-start">6338 ms</span>
+                <span class="method-start">139860 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10689 ms</span>
+                <span class="method-start">143610 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.web.SmokeWebTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">10875 ms</span>
+                <span class="method-start">143781 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">checkboxesLinkOpens</span>
-                <span class="method-start">11833 ms</span>
+                <span class="method-start">144822 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">14903 ms</span>
+                <span class="method-start">148240 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
