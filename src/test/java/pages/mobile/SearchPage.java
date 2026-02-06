@@ -14,12 +14,22 @@ public class SearchPage {
   private final AndroidDriver driver;
   private final WebDriverWait wait;
 
-  private final By searchContainer = By.id("org.wikipedia:id/search_container");
-  private final By searchContainerText = By.id("org.wikipedia:id/search_container_text");
-  private final By searchInput = By.id("org.wikipedia:id/search_src_text");
-  private final By clearBtn = By.id("org.wikipedia:id/search_close_btn");
-  private final By resultsList = By.id("org.wikipedia:id/search_results_list");
-  private final By resultTitle = By.id("org.wikipedia:id/page_list_item_title");
+  private final By searchContainer = AppiumBy.id("org.wikipedia:id/search_container");
+  private final By searchContainerText = AppiumBy.id("org.wikipedia:id/search_container_text");
+  private final By searchMenu = AppiumBy.id("org.wikipedia:id/menu_search");
+  private final By searchInput = AppiumBy.id("org.wikipedia:id/search_src_text");
+  private final By clearBtn = AppiumBy.id("org.wikipedia:id/search_close_btn");
+  private final By resultsList = AppiumBy.id("org.wikipedia:id/search_results_list");
+  private final By resultTitle = AppiumBy.id("org.wikipedia:id/page_list_item_title");
+
+  private final By searchAccessibility = AppiumBy.accessibilityId("Search Wikipedia");
+  private final By uiSearchDesc = AppiumBy.androidUIAutomator(
+      "new UiSelector().descriptionContains(\"Search\")");
+  private final By uiSearchText = AppiumBy.androidUIAutomator(
+      "new UiSelector().textContains(\"Search\")");
+  private final By recyclerView = AppiumBy.className("androidx.recyclerview.widget.RecyclerView");
+  private final By editText = AppiumBy.className("android.widget.EditText");
+  private final By textView = AppiumBy.className("android.widget.TextView");
 
   public SearchPage(AndroidDriver driver, WebDriverWait wait) {
     this.driver = driver;
@@ -30,29 +40,32 @@ public class SearchPage {
   public void openSearch() {
     dismissOnboardingIfPresent();
 
-    WebDriverWait quickWait = new WebDriverWait(driver, Duration.ofSeconds(2));
-    quickWait.pollingEvery(Duration.ofMillis(250));
-    By[] quickLocators = new By[] { searchContainerText, searchContainer };
-    for (By locator : quickLocators) {
+    By[] locators = new By[] {
+        searchAccessibility,
+        searchMenu,
+        searchContainerText,
+        searchContainer,
+        uiSearchDesc,
+        uiSearchText
+    };
+
+    WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+    shortWait.pollingEvery(Duration.ofMillis(250));
+
+    for (By locator : locators) {
       try {
-        quickWait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput));
-        return;
+        shortWait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        if (waitForSearchInput(Duration.ofSeconds(2)) != null) {
+          return;
+        }
       } catch (TimeoutException ignored) {
       }
     }
 
-    By[] locators = new By[] {
-        searchContainerText,
-        searchContainer,
-        AppiumBy.accessibilityId("Search Wikipedia"),
-        By.xpath("//*[contains(@text,'Search') or contains(@text,'Поиск') or contains(@content-desc,'Search')]")
-    };
-
     for (By locator : locators) {
       try {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput));
+        waitForSearchInput();
         return;
       } catch (TimeoutException ignored) {
       }
@@ -63,34 +76,147 @@ public class SearchPage {
   }
 
   public void typeQuery(String text) {
-    WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(searchInput));
+    WebElement input = waitForSearchInput();
+    if (isClickable(clearBtn, Duration.ofSeconds(2))) {
+      try {
+        driver.findElement(clearBtn).click();
+      } catch (Exception ignored) {
+      }
+    }
     try {
-      WebElement clear = wait.until(ExpectedConditions.elementToBeClickable(clearBtn));
-      clear.click();
-    } catch (TimeoutException ignored) {
+      input.clear();
+    } catch (Exception ignored) {
     }
     input.sendKeys(text);
   }
 
-  public boolean hasResults() {
+  public boolean waitResultsVisible() {
     try {
-      return wait.until(ExpectedConditions.visibilityOfElementLocated(resultsList)).isDisplayed();
+      wait.until(driver -> hasAnyResultItem());
+      return true;
     } catch (TimeoutException e) {
-      try {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(resultTitle)).isDisplayed();
-      } catch (TimeoutException ignored) {
-        return false;
-      }
+      return false;
     }
   }
 
   public void openFirstResult() {
-    wait.until(ExpectedConditions.visibilityOfElementLocated(resultTitle));
-    List<WebElement> results = driver.findElements(resultTitle);
-    if (results.isEmpty()) {
-      throw new IllegalStateException("No search results to open");
+    if (!waitResultsVisible()) {
+      throw new TimeoutException("Search results not visible");
     }
-    results.get(0).click();
+
+    WebElement list = waitResultsContainer();
+
+    List<WebElement> titles = list.findElements(resultTitle);
+    for (WebElement title : titles) {
+      if (hasText(title)) {
+        title.click();
+        return;
+      }
+    }
+
+    List<WebElement> textViews = list.findElements(textView);
+    for (WebElement tv : textViews) {
+      if (hasText(tv)) {
+        tv.click();
+        return;
+      }
+    }
+
+    List<WebElement> clickables = list.findElements(By.xpath(".//*[@clickable='true']"));
+    for (WebElement clickable : clickables) {
+      List<WebElement> childTexts = clickable.findElements(textView);
+      for (WebElement tv : childTexts) {
+        if (hasText(tv)) {
+          clickable.click();
+          return;
+        }
+      }
+    }
+
+    throw new IllegalStateException("No search results to open");
+  }
+
+  private boolean hasAnyResultItem() {
+    WebElement list = findResultsContainer();
+    if (list == null) {
+      return false;
+    }
+
+    List<WebElement> titles = list.findElements(resultTitle);
+    for (WebElement title : titles) {
+      if (hasText(title)) {
+        return true;
+      }
+    }
+
+    List<WebElement> textViews = list.findElements(textView);
+    for (WebElement tv : textViews) {
+      if (hasText(tv)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  private WebElement waitResultsContainer() {
+    try {
+      return wait.until(ExpectedConditions.visibilityOfElementLocated(resultsList));
+    } catch (TimeoutException e) {
+      return wait.until(ExpectedConditions.visibilityOfElementLocated(recyclerView));
+    }
+  }
+
+  private WebElement findResultsContainer() {
+    List<WebElement> list = driver.findElements(resultsList);
+    if (!list.isEmpty() && list.get(0).isDisplayed()) {
+      return list.get(0);
+    }
+    List<WebElement> rv = driver.findElements(recyclerView);
+    if (!rv.isEmpty() && rv.get(0).isDisplayed()) {
+      return rv.get(0);
+    }
+    return null;
+  }
+
+  private WebElement waitForSearchInput() {
+    WebElement input = waitForSearchInput(Duration.ofSeconds(30));
+    if (input == null) {
+      throw new TimeoutException("Search input not found");
+    }
+    return input;
+  }
+
+  private WebElement waitForSearchInput(Duration timeout) {
+    By[] inputs = new By[] { searchInput, editText };
+    WebDriverWait inputWait = new WebDriverWait(driver, timeout);
+    inputWait.pollingEvery(Duration.ofMillis(250));
+
+    for (By locator : inputs) {
+      try {
+        return inputWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+      } catch (TimeoutException ignored) {
+      }
+    }
+    return null;
+  }
+
+  private boolean isClickable(By locator, Duration timeout) {
+    try {
+      new WebDriverWait(driver, timeout)
+          .until(ExpectedConditions.elementToBeClickable(locator));
+      return true;
+    } catch (TimeoutException e) {
+      return false;
+    }
+  }
+
+  private boolean hasText(WebElement el) {
+    if (el == null) {
+      return false;
+    }
+    String text = el.getText();
+    return text != null && !text.trim().isEmpty();
   }
 
   private void dismissOnboardingIfPresent() {
@@ -102,14 +228,9 @@ public class SearchPage {
         By.id("android:id/button1"),
         By.id("com.android.permissioncontroller:id/permission_allow_button"),
         By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button"),
-        By.id("com.android.permissioncontroller:id/permission_deny_button"),
-        By.id("com.android.permissioncontroller:id/permission_deny_and_dont_ask_again_button"),
-        By.xpath("//*[@text='Continue' or @text='CONTINUE'"
-            + " or @text='Skip' or @text='SKIP'"
-            + " or @text='Accept' or @text='AGREE'"
-            + " or @text='No thanks' or @text='NO THANKS'"),
-        By.xpath("//*[@text='Allow' or @text='Разрешить'"
-            + " or contains(@text,'While using') or contains(@text,'во время использования')]")
+        By.xpath("//*[@text='Continue' or @text='CONTINUE' or @text='Skip' or @text='SKIP'"
+            + " or @text='Accept' or @text='AGREE' or @text='No thanks' or @text='NO THANKS'"
+            + " or @text='Allow' or contains(@text,'While using')]")
     };
 
     WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -121,7 +242,7 @@ public class SearchPage {
         try {
           shortWait.until(ExpectedConditions.elementToBeClickable(locator)).click();
           clicked = true;
-          sleepMillis(400);
+          sleepMillis(300);
           if (isSearchContainerVisible()) {
             return;
           }
@@ -139,8 +260,9 @@ public class SearchPage {
     By[] locators = new By[] {
         searchContainerText,
         searchContainer,
-        AppiumBy.accessibilityId("Search Wikipedia"),
-        By.xpath("//*[@text='Search' or @text='Поиск' or @content-desc='Search']")
+        searchAccessibility,
+        uiSearchDesc,
+        uiSearchText
     };
 
     for (By locator : locators) {

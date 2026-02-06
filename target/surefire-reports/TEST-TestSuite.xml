@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="596.246" tests="6" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="166.357" tests="8" errors="0" skipped="2" failures="1">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="webdriver.chrome.driver" value="C:\Users\Даниил\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Даниил\AppData\Local\Temp\surefire2077627684789667932\surefirebooter-20260206031449862_3.jar C:\Users\Даниил\AppData\Local\Temp\surefire2077627684789667932 2026-02-06T03-14-49_631-jvmRun1 surefire-20260206031449862_1tmp surefire_0-20260206031449862_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Даниил\AppData\Local\Temp\surefire7037426666148559247\surefirebooter-20260206041435832_3.jar C:\Users\Даниил\AppData\Local\Temp\surefire7037426666148559247 2026-02-06T04-14-35_602-jvmRun1 surefire-20260206041435832_1tmp surefire_0-20260206041435832_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Даниил\Desktop\ui-tests-project\target\test-classes;C:\Users\Даниил\Desktop\ui-tests-project\target\classes;C:\Users\Даниил\.m2\repository\org\testng\testng\7.12.0\testng-7.12.0.jar;C:\Users\Даниил\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Даниил\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Даниил\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-java\4.34.0\selenium-java-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-api\4.34.0\selenium-api-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.34.0\selenium-chrome-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.34.0\selenium-chromium-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-json\4.34.0\selenium-json-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.34.0\selenium-manager-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v136\4.34.0\selenium-devtools-v136-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.34.0\selenium-devtools-v137-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v138\4.34.0\selenium-devtools-v138-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.34.0\selenium-edge-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.34.0\selenium-firefox-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-http\4.34.0\selenium-http-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.34.0\selenium-ie-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.34.0\selenium-remote-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\Даниил\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Даниил\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Даниил\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-api\1.51.0\opentelemetry-api-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-context\1.51.0\opentelemetry-context-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.51.0\opentelemetry-exporter-logging-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.51.0\opentelemetry-sdk-common-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.51.0\opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.51.0\opentelemetry-sdk-extension-autoconfigure-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.51.0\opentelemetry-sdk-trace-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.51.0\opentelemetry-sdk-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.51.0\opentelemetry-sdk-metrics-1.51.0.jar;C:\Users\Даниил\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.51.0\opentelemetry-sdk-logs-1.51.0.jar;C:\Users\Даниил\.m2\repository\net\bytebuddy\byte-buddy\1.17.6\byte-buddy-1.17.6.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-os\4.34.0\selenium-os-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\apache\commons\commons-exec\1.5.0\commons-exec-1.5.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.34.0\selenium-safari-driver-4.34.0.jar;C:\Users\Даниил\.m2\repository\org\seleniumhq\selenium\selenium-support\4.34.0\selenium-support-4.34.0.jar;C:\Users\Даниил\.m2\repository\io\github\bonigarcia\webdrivermanager\6.3.3\webdrivermanager-6.3.3.jar;C:\Users\Даниил\.m2\repository\com\google\code\gson\gson\2.13.2\gson-2.13.2.jar;C:\Users\Даниил\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\Даниил\.m2\repository\com\github\docker-java\docker-java\3.6.0\docker-java-3.6.0.jar;C:\Users\Даниил\.m2\repository\com\github\docker-java\docker-java-core\3.6.0\docker-java-core-3.6.0.jar;C:\Users\Даниил\.m2\repository\com\github\docker-java\docker-java-api\3.6.0\docker-java-api-3.6.0.jar;C:\Users\Даниил\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\Даниил\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\Даниил\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\Даниил\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\Даниил\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.6.0\docker-java-transport-httpclient5-3.6.0.jar;C:\Users\Даниил\.m2\repository\com\github\docker-java\docker-java-transport\3.6.0\docker-java-transport-3.6.0.jar;C:\Users\Даниил\.m2\repository\net\java\dev\jna\jna\5.17.0\jna-5.17.0.jar;C:\Users\Даниил\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\Даниил\.m2\repository\org\apache\commons\commons-lang3\3.19.0\commons-lang3-3.19.0.jar;C:\Users\Даниил\.m2\repository\org\apache\commons\commons-compress\1.28.0\commons-compress-1.28.0.jar;C:\Users\Даниил\.m2\repository\commons-codec\commons-codec\1.19.0\commons-codec-1.19.0.jar;C:\Users\Даниил\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\Даниил\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.4.3\httpclient5-5.4.3.jar;C:\Users\Даниил\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.3.4\httpcore5-5.3.4.jar;C:\Users\Даниил\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.3.4\httpcore5-h2-5.3.4.jar;C:\Users\Даниил\.m2\repository\io\appium\java-client\9.5.0\java-client-9.5.0.jar;C:\Users\Даниил\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Даниил\.m2\repository\org\slf4j\slf4j-simple\2.0.17\slf4j-simple-2.0.17.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="android.udid" value="emulator-5554"/>
-    <property name="surefire.real.class.path" value="C:\Users\Даниил\AppData\Local\Temp\surefire2077627684789667932\surefirebooter-20260206031449862_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Даниил\AppData\Local\Temp\surefire7037426666148559247\surefirebooter-20260206041435832_3.jar"/>
     <property name="surefire.suiteXmlFile" value="src/test/resources/testng-mobile.xml"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,94 +62,58 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="canSelectOption" classname="tests.web.DropdownWebTest" time="2.856">
+  <testcase name="addAndRemoveElement" classname="tests.web.AddRemoveElementsWebTest" time="2.811">
     <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Даниил\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe
-февр. 06, 2026 3:17:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+февр. 06, 2026 4:14:38 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 144
-февр. 06, 2026 3:17:06 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+февр. 06, 2026 4:14:38 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for 144.0.7559.112. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.34.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="userCanLogin" classname="tests.web.LoginWebTest" time="3.749">
+  <testcase name="canSelectOption" classname="tests.web.DropdownWebTest" time="2.749">
     <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Даниил\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe
-февр. 06, 2026 3:17:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+февр. 06, 2026 4:14:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 144
-февр. 06, 2026 3:17:10 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+февр. 06, 2026 4:14:42 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for 144.0.7559.112. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.34.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="checkboxesLinkOpens" classname="tests.web.SmokeWebTest" time="3.417">
+  <testcase name="userCanLogin" classname="tests.web.LoginWebTest" time="4.174">
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Даниил\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe
+февр. 06, 2026 4:14:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 144
+февр. 06, 2026 4:14:45 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 144.0.7559.112. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.34.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="checkboxesLinkOpens" classname="tests.web.SmokeWebTest" time="2.969">
     <system-out><![CDATA[URL=https://the-internet.herokuapp.com/
 Title=The Internet
 H1=Welcome to the-internet
 ]]></system-out>
     <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Даниил\.cache\selenium\chromedriver\win64\144.0.7559.133\chromedriver.exe
-февр. 06, 2026 3:17:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+февр. 06, 2026 4:14:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 144
-февр. 06, 2026 3:17:15 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+февр. 06, 2026 4:14:51 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for 144.0.7559.112. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.34.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="openFirstSearchResult" classname="tests.mobile.OpenArticleMobileTest" time="170.391">
-    <failure message="Search container not found&#10;Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
-Search container not found
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.17'
-Driver info: driver.version: unknown
-	at pages.mobile.SearchPage.openSearch(SearchPage.java:62)
-	at tests.mobile.OpenArticleMobileTest.openFirstSearchResult(OpenArticleMobileTest.java:17)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1269)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></failure>
+  <testcase name="setUp" classname="tests.mobile.OpenArticleMobileTest" time="0.0">
+    <skipped message="adb get-state failed | adbPath=D:\Android\Sdk\platform-tools\adb.exe | udid=emulator-5554 | timeoutSec=120 | cmd=D:\Android\Sdk\platform-tools\adb.exe -s emulator-5554 get-state | exit=1 | stdout=* daemon not running; starting now at tcp:5037&#10;* daemon started successfully&#10;error: device offline"/>
     <system-out><![CDATA[[MOBILE] appiumUrl=http://127.0.0.1:4723/wd/hub
 [MOBILE] adbPath=D:\Android\Sdk\platform-tools\adb.exe
 [MOBILE] udid=emulator-5554
 [MOBILE] bootTimeoutSec=120
-[MOBILE] currentPackage=org.wikipedia
-[MOBILE] currentActivity=.DefaultIcon
-[MOBILE] pageSource=<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2138">
-  <android.widget.FrameLayout index="0" package="org.wikipedia" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2340]" displayed="true" a11y-important="true" screen-reader-focusable="false" drawing-order="0" showing-hint="false" text-entry-key="false" dismissable="false" a11y-focused="false" heading="false" live-region="0" context-clickable="false" content-invalid="false" pane-title="" window-id="247">
-    <android.widget.LinearLayout index="0" package="org.wikipedia" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2274]" displayed="true" a11y-important="false" screen-reader-focusable="false" drawing-order="1" showing-hint="false" text-entry-key="false" dismissable="false" a11y-focused="false" heading="false" live-region="0" context-clickable="false" content-invalid="false" window-id="247">
-      <android.widget.FrameLayout index="0" package="org.wikipedia" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,136][1080,2274]" displayed="true" a11y-important="false" screen-reader-focusable="false" drawing-order="2" showing-hint="false" text-entry-key="false" dismissable="false" a11y-focused="false" heading="false" live-region="0" context-clickable="false" content-invalid="false" window-id="247">
-        <android.widget.FrameLayout index="0" package="org.wikipedia" class="android.wid
 ]]></system-out>
   </testcase>
-  <testcase name="searchReturnsResults" classname="tests.mobile.SearchMobileTest" time="204.984">
+  <testcase name="openFirstSearchResult" classname="tests.mobile.OpenArticleMobileTest" time="0.0">
+    <skipped message="adb get-state failed | adbPath=D:\Android\Sdk\platform-tools\adb.exe | udid=emulator-5554 | timeoutSec=120 | cmd=D:\Android\Sdk\platform-tools\adb.exe -s emulator-5554 get-state | exit=1 | stdout=* daemon not running; starting now at tcp:5037&#10;* daemon started successfully&#10;error: device offline"/>
+  </testcase>
+  <testcase name="searchReturnsResults" classname="tests.mobile.SearchMobileTest" time="76.593">
     <failure message="Search results should appear expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Search results should appear expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
@@ -195,7 +159,7 @@ Driver info: driver.version: unknown
 [MOBILE] bootTimeoutSec=120
 ]]></system-out>
   </testcase>
-  <testcase name="mainPageLoads" classname="tests.mobile.SmokeMobileTest" time="55.013">
+  <testcase name="mainPageLoads" classname="tests.mobile.SmokeMobileTest" time="52.091">
     <system-out><![CDATA[[MOBILE] appiumUrl=http://127.0.0.1:4723/wd/hub
 [MOBILE] adbPath=D:\Android\Sdk\platform-tools\adb.exe
 [MOBILE] udid=emulator-5554

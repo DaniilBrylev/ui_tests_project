@@ -8,6 +8,7 @@ C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\org\openqa\selenium
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\mobile\ArticlePage.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\mobile\MainPage.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\mobile\SearchPage.java
+C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\web\AddRemoveElementsPage.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\web\DropdownPage.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\web\HomePage.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\web\LoginPage.java
@@ -15,6 +16,7 @@ C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\pages\web\SecureAre
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\mobile\OpenArticleMobileTest.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\mobile\SearchMobileTest.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\mobile\SmokeMobileTest.java
+C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\web\AddRemoveElementsWebTest.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\web\DropdownWebTest.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\web\LoginWebTest.java
 C:\Users\Даниил\Desktop\ui-tests-project\src\test\java\tests\web\SmokeWebTest.java

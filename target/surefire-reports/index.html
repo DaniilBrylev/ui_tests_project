@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">3 suites, 2 failed tests</span>
+      <span class="top-banner-font-1">3 suites, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  1 skipped,  1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,15 +103,24 @@
                     <div class="method-list-content failed suite-Mobile_UI_Tests">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.OpenArticleMobileTest" class="method navigator-link" hash-for-method="openFirstSearchResult">openFirstSearchResult</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.SearchMobileTest" class="method navigator-link" hash-for-method="searchReturnsResults">searchReturnsResults</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Mobile_UI_Tests -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="hide-methods skipped suite-Mobile_UI_Tests"> (hide)</a> <!-- hide-methods skipped suite-Mobile_UI_Tests -->
+                      <a href="#" panel-name="suite-Mobile_UI_Tests" class="show-methods skipped suite-Mobile_UI_Tests"> (show)</a> <!-- show-methods skipped suite-Mobile_UI_Tests -->
+                    </span>
+                    <div class="method-list-content skipped suite-Mobile_UI_Tests">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Mobile_UI_Tests" title="tests.mobile.OpenArticleMobileTest" class="method navigator-link" hash-for-method="openFirstSearchResult">openFirstSearchResult</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Mobile_UI_Tests -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -190,7 +199,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -199,6 +208,11 @@
                       <a href="#" panel-name="suite-Web_UI_Tests" class="show-methods passed suite-Web_UI_Tests"> (show)</a> <!-- show-methods passed suite-Web_UI_Tests -->
                     </span>
                     <div class="method-list-content passed suite-Web_UI_Tests">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Web_UI_Tests" title="tests.web.AddRemoveElementsWebTest" class="method navigator-link" hash-for-method="addAndRemoveElement">addAndRemoveElement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Web_UI_Tests" title="tests.web.DropdownWebTest" class="method navigator-link" hash-for-method="canSelectOption">canSelectOption</a> <!-- method navigator-link -->
@@ -248,9 +262,9 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Mobile_UI_Tests-class-failed -->
-          <div class="suite-Mobile_UI_Tests-class-failed">
+          <div class="suite-Mobile_UI_Tests-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">tests.mobile.OpenArticleMobileTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -259,19 +273,18 @@
                   <a name="openFirstSearchResult">
                   </a> <!-- openFirstSearchResult -->
                   <span class="method-name">openFirstSearchResult</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Search container not found
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.17&apos;
-Driver info: driver.version: unknown
-	at pages.mobile.SearchPage.openSearch(SearchPage.java:62)
-	at tests.mobile.OpenArticleMobileTest.openFirstSearchResult(OpenArticleMobileTest.java:17)
+                  <div class="stack-trace">org.testng.SkipException: adb get-state failed | adbPath=D:\Android\Sdk\platform-tools\adb.exe | udid=emulator-5554 | timeoutSec=120 | cmd=D:\Android\Sdk\platform-tools\adb.exe -s emulator-5554 get-state | exit=1 | stdout=* daemon not running; starting now at tcp:5037
+* daemon started successfully
+error: device offline
+	at core.BaseMobileTest.waitForEmulatorBoot(BaseMobileTest.java:209)
+	at core.BaseMobileTest.setUp(BaseMobileTest.java:35)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Mobile_UI_Tests-class-failed -->
+          </div> <!-- suite-Mobile_UI_Tests-class-skipped -->
           <div class="suite-Mobile_UI_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -292,6 +305,21 @@ Driver info: driver.version: unknown
           <div class="suite-Web_UI_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">tests.web.AddRemoveElementsWebTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addAndRemoveElement">
+                  </a> <!-- addAndRemoveElement -->
+                  <span class="method-name">addAndRemoveElement</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Web_UI_Tests-class-passed -->
+          <div class="suite-Web_UI_Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">tests.web.DropdownWebTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -307,21 +335,6 @@ Driver info: driver.version: unknown
           <div class="suite-Web_UI_Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.web.LoginWebTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="userCanLogin">
-                  </a> <!-- userCanLogin -->
-                  <span class="method-name">userCanLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_UI_Tests-class-passed -->
-          <div class="suite-Web_UI_Tests-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">tests.web.SmokeWebTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -330,6 +343,21 @@ Driver info: driver.version: unknown
                   <a name="checkboxesLinkOpens">
                   </a> <!-- checkboxesLinkOpens -->
                   <span class="method-name">checkboxesLinkOpens</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Web_UI_Tests-class-passed -->
+          <div class="suite-Web_UI_Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.web.LoginWebTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="userCanLogin">
+                  </a> <!-- userCanLogin -->
+                  <span class="method-name">userCanLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -389,6 +417,7 @@ Driver info: driver.version: unknown
       &lt;package name=&quot;tests.web&quot;/&gt;
     &lt;/packages&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;tests.web.AddRemoveElementsWebTest&quot;/&gt;
       &lt;class name=&quot;tests.web.DropdownWebTest&quot;/&gt;
       &lt;class name=&quot;tests.web.LoginWebTest&quot;/&gt;
       &lt;class name=&quot;tests.web.SmokeWebTest&quot;/&gt;
@@ -426,7 +455,7 @@ Driver info: driver.version: unknown
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Web Tests (3 classes)</span>
+                <span class="test-name">Web Tests (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -495,20 +524,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'searchReturnsResults')
 data.setCell(0, 2, 'tests.mobile.SearchMobileTest')
-data.setCell(0, 3, 204983);
+data.setCell(0, 3, 76590);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openFirstSearchResult')
-data.setCell(1, 2, 'tests.mobile.OpenArticleMobileTest')
-data.setCell(1, 3, 170383);
+data.setCell(1, 1, 'mainPageLoads')
+data.setCell(1, 2, 'tests.mobile.SmokeMobileTest')
+data.setCell(1, 3, 52090);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'mainPageLoads')
-data.setCell(2, 2, 'tests.mobile.SmokeMobileTest')
-data.setCell(2, 3, 55013);
+data.setCell(2, 1, 'openFirstSearchResult')
+data.setCell(2, 2, 'tests.mobile.OpenArticleMobileTest')
+data.setCell(2, 3, 0);
 window.suiteTableData['Mobile_UI_Tests']= { tableData: data, tableDiv: 'times-div-Mobile_UI_Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Mobile_UI_Tests">
               </div> <!-- times-div-Mobile_UI_Tests -->
             </div> <!-- times-div -->
@@ -528,24 +557,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'userCanLogin')
 data.setCell(0, 2, 'tests.web.LoginWebTest')
-data.setCell(0, 3, 3750);
+data.setCell(0, 3, 4174);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'checkboxesLinkOpens')
 data.setCell(1, 2, 'tests.web.SmokeWebTest')
-data.setCell(1, 3, 3418);
+data.setCell(1, 3, 2969);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'canSelectOption')
-data.setCell(2, 2, 'tests.web.DropdownWebTest')
-data.setCell(2, 3, 2854);
+data.setCell(2, 1, 'addAndRemoveElement')
+data.setCell(2, 2, 'tests.web.AddRemoveElementsWebTest')
+data.setCell(2, 3, 2810);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'canSelectOption')
+data.setCell(3, 2, 'tests.web.DropdownWebTest')
+data.setCell(3, 3, 2748);
 window.suiteTableData['Web_UI_Tests']= { tableData: data, tableDiv: 'times-div-Web_UI_Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Web_UI_Tests">
               </div> <!-- times-div-Web_UI_Tests -->
             </div> <!-- times-div -->
@@ -611,47 +644,41 @@ return data;
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">openFirstSearchResult</span>
-                <span class="method-start">7113 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">177502 ms</span>
+                <span class="method-start">2168 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.mobile.SearchMobileTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">178011 ms</span>
+                <span class="method-start">2168 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">searchReturnsResults</span>
-                <span class="method-start">181961 ms</span>
+                <span class="method-start">12451 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">386946 ms</span>
+                <span class="method-start">89043 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.mobile.SmokeMobileTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">387571 ms</span>
+                <span class="method-start">89823 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">mainPageLoads</span>
-                <span class="method-start">391492 ms</span>
+                <span class="method-start">94957 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">446505 ms</span>
+                <span class="method-start">147047 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -661,48 +688,63 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.web.DropdownWebTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.web.AddRemoveElementsWebTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">canSelectOption</span>
-                <span class="method-start">135832 ms</span>
+                <span class="method-name">addAndRemoveElement</span>
+                <span class="method-start">1885 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">138689 ms</span>
+                <span class="method-start">4697 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.web.DropdownWebTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">4883 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">canSelectOption</span>
+                <span class="method-start">5841 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">8590 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.web.LoginWebTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">138914 ms</span>
+                <span class="method-start">8734 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">userCanLogin</span>
-                <span class="method-start">139860 ms</span>
+                <span class="method-start">9635 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">143610 ms</span>
+                <span class="method-start">13809 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.web.SmokeWebTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">143781 ms</span>
+                <span class="method-start">13970 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">checkboxesLinkOpens</span>
-                <span class="method-start">144822 ms</span>
+                <span class="method-start">14846 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">148240 ms</span>
+                <span class="method-start">17815 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

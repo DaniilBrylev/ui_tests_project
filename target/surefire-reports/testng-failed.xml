@@ -3,13 +3,6 @@
 <suite name="Failed suite [Mobile UI Tests]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="Mobile Tests(failed)" verbose="0">
     <classes>
-      <class name="tests.mobile.SearchMobileTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="searchReturnsResults"/>
-        </methods>
-      </class> <!-- tests.mobile.SearchMobileTest -->
       <class name="tests.mobile.OpenArticleMobileTest">
         <methods>
           <include name="tearDown"/>
@@ -17,6 +10,13 @@
           <include name="openFirstSearchResult"/>
         </methods>
       </class> <!-- tests.mobile.OpenArticleMobileTest -->
+      <class name="tests.mobile.SearchMobileTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="searchReturnsResults"/>
+        </methods>
+      </class> <!-- tests.mobile.SearchMobileTest -->
     </classes>
   </test> <!-- Mobile Tests(failed) -->
 </suite> <!-- Failed suite [Mobile UI Tests] -->

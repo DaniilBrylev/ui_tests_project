@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.SkipException;
@@ -57,9 +58,10 @@ public abstract class BaseMobileTest {
       throw new RuntimeException("Invalid APPIUM_URL", e);
     }
 
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wait = new WebDriverWait(driver, Duration.ofSeconds(Config.MOBILE_TIMEOUT_SECONDS));
 
-    // КЛЮЧЕВОЕ: гарантируем, что Appium реально видит Wikipedia, а не лаунчер
+   
     ensureWikipediaInForegroundOrSkip();
   }
 
@@ -70,36 +72,39 @@ public abstract class BaseMobileTest {
     }
   }
 
-  // можно вызывать в начале тестов/страниц (и это не ломает ничего)
+  
   protected void ensureWikipediaInForeground() {
     ensureWikipediaInForegroundOrSkip();
   }
 
   protected void dismissOnboardingIfPresent() {
-    // сначала убедимся, что мы вообще в Wikipedia
     ensureWikipediaInForegroundOrSkip();
 
-    WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(3));
     By[] locators = new By[] {
         By.id("org.wikipedia:id/fragment_onboarding_skip_button"),
         By.id("org.wikipedia:id/onboarding_skip_button"),
         By.id("org.wikipedia:id/fragment_onboarding_forward_button"),
+        By.id("org.wikipedia:id/accept_button"),
         By.id("org.wikipedia:id/positiveButton"),
         By.id("android:id/button1"),
         By.id("com.android.permissioncontroller:id/permission_allow_button"),
-        By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+        By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button"),
+        By.xpath("//*[@text='Continue' or @text='CONTINUE' or @text='Skip' or @text='SKIP'"
+            + " or @text='Accept' or @text='AGREE' or @text='No thanks' or @text='NO THANKS'"
+            + " or @text='Allow' or contains(@text,'While using')]")
     };
 
-    // попробуем несколько кликов подряд (онбординг может быть в несколько экранов)
     for (int attempt = 0; attempt < 4; attempt++) {
       boolean clicked = false;
       for (By locator : locators) {
-        try {
-          shortWait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-          clicked = true;
-          sleepMillis(350);
-          break;
-        } catch (Exception ignored) {
+        if (exists(locator, Duration.ofSeconds(2))) {
+          try {
+            safeClick(locator);
+            clicked = true;
+            sleepMillis(300);
+            break;
+          } catch (Exception ignored) {
+          }
         }
       }
       if (!clicked) {
@@ -116,23 +121,31 @@ public abstract class BaseMobileTest {
     Exception lastError = null;
 
     while (System.currentTimeMillis() < deadline) {
-      try {
-        String current = safeTrim(driver.getCurrentPackage());
-        if (WIKI_PKG.equals(current)) {
-          return;
-        }
-      } catch (Exception e) {
-        lastError = e;
+      if (isWikipediaForeground()) {
+        return;
       }
 
-      // 1) главный способ
       try {
         driver.activateApp(WIKI_PKG);
       } catch (Exception e) {
         lastError = e;
       }
 
-      // 2) fallback - пнем через adb monkey
+      if (isWikipediaForeground()) {
+        return;
+      }
+
+      try {
+        driver.terminateApp(WIKI_PKG);
+        driver.activateApp(WIKI_PKG);
+      } catch (Exception e) {
+        lastError = e;
+      }
+
+      if (isWikipediaForeground()) {
+        return;
+      }
+
       try {
         runCommand(adbPath, "-s", udid, "shell", "monkey", "-p", WIKI_PKG,
             "-c", "android.intent.category.LAUNCHER", "1");
@@ -145,6 +158,14 @@ public abstract class BaseMobileTest {
 
     String diag = buildForegroundDiagnostics(lastError);
     throw new SkipException("Wikipedia not in foreground for Appium session. " + diag);
+  }
+
+  private boolean isWikipediaForeground() {
+    try {
+      return WIKI_PKG.equals(safeTrim(driver.getCurrentPackage()));
+    } catch (Exception e) {
+      return false;
+    }
   }
 
   private String buildForegroundDiagnostics(Exception lastError) {
@@ -266,6 +287,32 @@ public abstract class BaseMobileTest {
       return udid.trim();
     }
     return "emulator-5554";
+  }
+
+  protected WebElement waitVisible(By locator) {
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+  }
+
+  protected WebElement waitClickable(By locator) {
+    return wait.until(ExpectedConditions.elementToBeClickable(locator));
+  }
+
+  protected boolean exists(By locator, Duration timeout) {
+    try {
+      new WebDriverWait(driver, timeout).until(ExpectedConditions.presenceOfElementLocated(locator));
+      return true;
+    } catch (TimeoutException e) {
+      return false;
+    }
+  }
+
+  protected void safeClick(By locator) {
+    try {
+      waitClickable(locator).click();
+    } catch (Exception e) {
+      sleepMillis(300);
+      waitClickable(locator).click();
+    }
   }
 
   private void ensureAppiumIsAvailable() {

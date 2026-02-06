@@ -16,6 +16,6 @@ public class SearchMobileTest extends BaseMobileTest {
     searchPage.openSearch();
     searchPage.typeQuery("Java");
 
-    Assert.assertTrue(searchPage.hasResults(), "Search results should appear");
+    Assert.assertTrue(searchPage.waitResultsVisible(), "Search results should appear");
   }
 }

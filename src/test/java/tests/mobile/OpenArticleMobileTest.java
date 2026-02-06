@@ -16,6 +16,7 @@ public class OpenArticleMobileTest extends BaseMobileTest {
     SearchPage searchPage = new SearchPage(driver, wait);
     searchPage.openSearch();
     searchPage.typeQuery("Java");
+    searchPage.waitResultsVisible();
     searchPage.openFirstResult();
 
     ArticlePage articlePage = new ArticlePage(driver, wait);
